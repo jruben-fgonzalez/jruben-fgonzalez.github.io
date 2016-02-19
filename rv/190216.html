@@ -13,12 +13,12 @@
       <script>
         var escena=new THREE.Scene();
         
-        var FOV=75;
+        var fov=75;
         var aspect= window.innerWidth/window.innerHeight;
         
         var near=0.1;
         var far=1000;
-        var camara= new THREE.Perspectivecamera(FOV,aspect,near,far);
+        var camara= new THREE.Perspectivecamera(fov,aspect,near,far);
         camara.position.z=5;
         
         var renderer=new THREE.WebGLRenderer();
