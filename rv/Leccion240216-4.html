@@ -19,7 +19,7 @@
         var near=0.1;
         var far=1000;
         var camara= new THREE.PerspectiveCamera(fov,aspect,near,far);
-        camara.position.z=5;
+        camara.position.z=500;
         
         var renderer=new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth,window.innerHeight);
@@ -28,10 +28,15 @@
         var figura=new THREE.Shape();
         
         //las figuras se realizan sobre el plano XY
-        figura.moveTo(10,10);
-        figura.lineTo(10,40);
-        figura.lineTo(40,40);
-        figura.lineTo(10,10);
+        figura.moveTo(0,50);
+        figura.lineTo(10,55);
+        figura.lineTo(15,65);
+        figura.lineTo(20,55);
+        figura.lineTo(30,50);
+        figura.lineTo(20,45);
+        figura.lineTo(15,35);
+        figura.lineTo(10,45);
+        figura.lineTo(0,50);
         //para generar la malla hay que desarrollar la forma
         
         var forma=new THREE.ShapeGeometry(figura);
