@@ -7,8 +7,8 @@ var cilindroForma=new THREE.CylinderGeometry(0.5,0.5,4);
 
 //Para generar una forma combinada se requiere de las mallas para poder desplazar las formas en el espacio virtrual.
 
-var esfera 1= new THREE.Mesh(esferaForma);
-var esfera 2= new THREE.Mesh(esferaForma);
+var esfera1= new THREE.Mesh(esferaForma);
+var esfera2= new THREE.Mesh(esferaForma);
 var cilindro= new THREE.Mesh(cilindroForma);
 
 //Se desplazan las mallas
