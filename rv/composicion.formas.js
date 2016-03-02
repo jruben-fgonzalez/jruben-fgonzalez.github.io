@@ -35,7 +35,7 @@ malla=new THREE.Mesh(forma);
 Escena=new THREE.Scene();
 escena.add(malla);
 
-/Se inicializa la cámara y el renderer
+//Se inicializa la cámara y el renderer
 
 camara=new THREE.PerspectiveCamera();
 camara.position.z=10;
