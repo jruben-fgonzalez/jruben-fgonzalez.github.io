@@ -32,7 +32,7 @@ malla=new THREE.Mesh(forma);
 
 //Se inicializa la escena y se agrega la malla a ésta
 
-Escena=new THREE.Scene();
+escena=new THREE.Scene();
 escena.add(malla);
 
 //Se inicializa la cámara y el renderer
