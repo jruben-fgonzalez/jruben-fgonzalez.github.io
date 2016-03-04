@@ -9,7 +9,7 @@ function Pierna(){
   this.add(this.pie);
 }
 
-Pierna.prototype= new THREE.Object3D();
+Pierna.Pototype= new THREE.Object3D();
 
 function setup(){
   var cuerpo=new THREE.Mesh(new THREE.CylinderGeometry(1,2,5,10));
