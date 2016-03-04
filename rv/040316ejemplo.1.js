@@ -34,7 +34,7 @@ function setup(){
 function loop(){
   requestAnimationFrame(loop);
   renderer.render(escena,camara);
-  if (math.abs(PiernaD.rotation.z)>0.5)
+  if (Math.abs(PiernaD.rotation.z)>0.5)
   step=-step;
   
   piernaD.rotation.z+=step;
