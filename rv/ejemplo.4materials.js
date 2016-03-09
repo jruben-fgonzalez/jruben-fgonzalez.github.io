@@ -3,7 +3,7 @@ function setup(){
   var material=new THREE.MeshLambertMaterial({color: '#ffffff'});
   malla=new THREE.Mesh(forma,material);
   
-  car luzPuntual= new THREE.PointLight(0xcc00cc);
+  var luzPuntual= new THREE.PointLight(0xcc00cc);
   luzPuntual.position.x=10;
   luzPuntual.position.y=10;
   luzPuntual.position.z=10;
