@@ -11,3 +11,18 @@ function setup(){
 
   renderer=new THREE.WebGLRenderer();
   renderer.setSize(window.innerHeight*0.95,window.innerHeight*0.95);
+  ducument.body.appendChild(renderer.domElement);
+}
+
+function loop{
+  requestAnimationFrame(loop);
+  malla.rotation.x+=0.01;
+  malla.rotation.y+=0.01;
+  
+  renderer.render(escena,camara);
+}
+
+var camara, escena, renderer, malla;
+
+setup();
+loop();
