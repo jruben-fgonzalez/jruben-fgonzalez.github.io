@@ -1,6 +1,6 @@
 function setup(){
         THREE.ImageUtils.crossOrigin='';
-        var textura= THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/planets/earth_atmos_2848.jpg');
+        var textura= THREE.ImageUtils.loadTexture('http://www.cityplanet.mex.tl/images/3497/tierra.jpg');
         var material= new THREE.MeshPhongMaterial({map:textura});
         var forma=new THREE.SphereGeometry(1);
         malla= new THREE.Mesh(forma,material);
