@@ -1,17 +1,3 @@
-<!doctype html>
-  <html>
-    <head>
-      <title>Leccion 16/03/16 texturas2</title>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <style>
-      body {margin: 0;}
-      canvas {width: 100%; height: 100%}
-      </style>
-    </head>
-    <body>
-      <script src="three.min.js"></script>
-      <script>
-
       function setup(){
         THREE.ImageUtils.crossOrigin='';
         var textura= THREE.ImageUtils.loadTexture('http://threeejs.org/examples/textures/brick_diffuse.jpg');
@@ -46,7 +32,3 @@
       var escena, camara, renderer, malla;
       setup();
       loop();
-      
-      </script>
-    </body>
-  </html>
