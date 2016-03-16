@@ -2,7 +2,7 @@ function setup(){
         THREE.ImageUtils.crossOrigin='';
         var textura= THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/planets/earth_atmos_2048.jpg');
         var material= new THREE.MeshPhongMaterial({map:textura});
-        var forma=new THREE.SphereGeometry(1);
+        var forma=new THREE.SphereGeometry(1,100);
         malla= new THREE.Mesh(forma,material);
         malla.rotation.z+=0.25;
   
