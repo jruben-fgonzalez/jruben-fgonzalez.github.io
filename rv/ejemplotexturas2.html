@@ -1,2 +1,5 @@
 function setup(){
+  THREE.ImageUtils.crossOrigin='';
+  var textura= THREE.ImgaeUtils.loadTexture('http://...');
+  var material= new THREE.MeshLambertMaterial({map:textura});
   
