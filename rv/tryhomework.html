@@ -15,7 +15,7 @@
       function setup(){
         //Se plantean las geometrias a utilizar
 
-var esferaForma=new THREE.SphereGeometry(0.5, 10, 10);
+var esferaForma=new THREE.SphereGeometry(1, 10, 10);
 var cilindroForma=new THREE.CylinderGeometry(1, 1, 4, 20, 4);
 
 //Para generar una forma combinada se requiere de las mallas para poder desplazar las formas en el espacio virtrual.
@@ -25,7 +25,7 @@ var cuerpo= new THREE.Mesh(cilindroForma);
 
 //Se desplazan las mallas
 
-cabeza.position.y=4;
+cabeza.position.y=3;
 
 //Se genera una forma (geometria) abstracta.
 
