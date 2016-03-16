@@ -15,17 +15,20 @@
       function setup(){
         //Se plantean las geometrias a utilizar
 
-var esferaForma=new THREE.SphereGeometry(1.5, 10, 10);
-var cilindroForma=new THREE.CylinderGeometry(1.5, 1.5, 4, 20, 4);
+var cabezaForma=new THREE.SphereGeometry(1.5, 10, 10);
+var cuerpoForma=new THREE.CylinderGeometry(1.5, 1.5, 4, 20, 4);
+var pie1Forma=new THREE.CylinderGeometry(0.5, 0.5, 1, 20, 4);
 
 //Para generar una forma combinada se requiere de las mallas para poder desplazar las formas en el espacio virtrual.
 
-var cabeza= new THREE.Mesh(esferaForma);
-var cuerpo= new THREE.Mesh(cilindroForma);
+var cabeza= new THREE.Mesh(cabezaForma);
+var cuerpo= new THREE.Mesh(cuerpoForma);
+var pie1=new THREEMesh(pie1Forma);
 
 //Se desplazan las mallas
 
 cabeza.position.y=2;
+pie1.position.x=-1;
 
 //Se genera una forma (geometria) abstracta.
 
@@ -35,6 +38,7 @@ var forma= new THREE.Geometry();
 
 THREE.GeometryUtils.merge(forma,cabeza);
 THREE.GeometryUtils.merge(forma,cuerpo);
+THREE.GeometryUtils.merge(forma,pie1);
 
 //Se genera la malla a partir de la forma
 
