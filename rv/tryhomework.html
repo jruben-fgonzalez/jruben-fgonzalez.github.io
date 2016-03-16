@@ -15,11 +15,11 @@
       function setup(){
         
 var figurabasepie=new THREE.Shape();
-        figurabasepie.moveTo(10,0);
-        figurabasepie.lineTo(7,20);
-        figurabasepie.lineTo(-7,20);
-        figurabasepie.lineTo(-10,0);
-        figurabasepie.lineTo(10,0);
+        figurabasepie.moveTo(10,-30);
+        figurabasepie.lineTo(7,-20);
+        figurabasepie.lineTo(-7,-20);
+        figurabasepie.lineTo(-10,-30);
+        figurabasepie.lineTo(10,-30);
         
         var formabasepie=new THREE.ExtrudeGeometry(figurabasepie, {amount:10});
         //Se plantean las geometrias a utilizar
@@ -44,7 +44,6 @@ var mallabasepie=new THREE.Mesh(formabasepie);
 
 cabeza.position.y=20;
 pie1.position.y=-25;
-mallabasepie.position.y=50;
 
 //Se genera una forma (geometria) abstracta.
 
