@@ -13,22 +13,38 @@
       <script>
       
       function setup(){
+        
+var figurabasepie=new THREE.Shape();
+        figura.moveTo(5,0);
+        figura.lineTo(3,10);
+        figura.lineTo(-3,10);
+        figura.lineTo(-5,0);
+        figura.lineTo(0,0);
+        
+        var formabasepie=new THREE.ExtrudeGeometry(figurabasepie, {amount:10});
         //Se plantean las geometrias a utilizar
+        
+        
+//SphereGeometry(radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength)
+var cabezaForma=new THREE.SphereGeometry(15, 10, 10);
 
-var cabezaForma=new THREE.SphereGeometry(1.5, 10, 10);
-var cuerpoForma=new THREE.CylinderGeometry(1.5, 1.5, 4, 20, 4);
-var pie1Forma=new THREE.CylinderGeometry(0.5, 0.5, 1, 20, 4);
+//CylinderGeometry(radiusTop, radiusBottom, height, radiusSegments, heightSegments, openEnded, thetaStart, thetaLength)
+var cuerpoForma=new THREE.CylinderGeometry(15, 15, 40, 20, 4);
+var pie1Forma=new THREE.CylinderGeometry(5, 5, 10, 20, 4);
+
 
 //Para generar una forma combinada se requiere de las mallas para poder desplazar las formas en el espacio virtrual.
 
 var cabeza= new THREE.Mesh(cabezaForma);
 var cuerpo= new THREE.Mesh(cuerpoForma);
 var pie1=new THREE.Mesh(pie1Forma);
+var mallabasepie=new THREE.Mesh(formabasepie);
 
 //Se desplazan las mallas
 
-cabeza.position.y=2;
-pie1.position.y=-2.5;
+cabeza.position.y=20;
+pie1.position.y=-25;
+mallabasepie.position.y=-30;
 
 //Se genera una forma (geometria) abstracta.
 
@@ -39,6 +55,7 @@ var forma= new THREE.Geometry();
 THREE.GeometryUtils.merge(forma,cabeza);
 THREE.GeometryUtils.merge(forma,cuerpo);
 THREE.GeometryUtils.merge(forma,pie1);
+THREE.GeometryUtils.merge(forma,formabasepie);
 
 //Se genera la malla a partir de la forma
 
@@ -52,7 +69,7 @@ escena.add(malla);
 //Se inicializa la cámara y el renderer
 
 camara=new THREE.PerspectiveCamera();
-camara.position.z=10;
+camara.position.z=100;
 
 renderer=new THREE.WebGLRenderer();
 renderer.setSize(window.innerHeight*.95,window.innerHeight*.95);
