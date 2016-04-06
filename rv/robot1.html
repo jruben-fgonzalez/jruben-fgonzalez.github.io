@@ -124,12 +124,19 @@ function loop(){
   malla.rotation.y+=0.01;
   //malla.rotation.y+=0.01;
   
-  renderer.render(escena,camara);
+  renderer.render( escena, camara );
   controls.update(clock.getDelta());
   requestAnimationFrame( loop );
   }
   
-  var escena, camara, renderer, malla,clock,controls;
+  var escena, camara, renderer, malla;
+  var clock = new THREE.Clock();
+var controls = new THREE.FirstPersonControls( camara );
+controls.movementSpeed = 70;
+controls.lookSpeed = 0.05;
+controls.noFly = true;
+controls.lookVertical = false;
+
   setup();
   loop();
   
