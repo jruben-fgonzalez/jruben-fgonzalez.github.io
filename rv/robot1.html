@@ -117,7 +117,6 @@ controls.lookVertical = false;
 
 }
 function loop(){
-  requestAnimationFrame(loop);
   
   //Es importante notar que las rotaciones son sobre los ejes que están fijos a la malla, nolos ejes del lienzo.
   //inicialmente amnos coinciden.
@@ -127,6 +126,7 @@ function loop(){
   
   renderer.render(escena,camara);
   controls.update(clock.getDelta());
+  requestAnimationFrame( loop );
   }
   
   var escena, camara, renderer, malla;
