@@ -103,7 +103,7 @@ camara=new THREE.PerspectiveCamera();
 camara.position.z=100;
 
 renderer=new THREE.WebGLRenderer();
-renderer.setSize(window.innerHeight*.95,window.innerHeight*.95);
+renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 escena.add( camara );
@@ -121,7 +121,7 @@ function loop(){
   //Es importante notar que las rotaciones son sobre los ejes que están fijos a la malla, nolos ejes del lienzo.
   //inicialmente amnos coinciden.
   
-  malla.rotation.y+=0.01;
+  //malla.rotation.y+=0.01;
   //malla.rotation.y+=0.01;
   
   renderer.render( escena, camara );
