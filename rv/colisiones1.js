@@ -34,6 +34,6 @@ function loop(){
 
 var cubo1,cubo2,escena,camara,renderer;
 var raycaster,step;
-
+dir=1;
 setup();
 loop();
