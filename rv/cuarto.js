@@ -104,16 +104,35 @@ renderer.setSize(window.innerHeight*0.95,window.innerHeight*0.95);
 document.body.appendChild(renderer.domElement);
 
 step2=0.2;
+
+
+raycaster=new THREE.Raycaster(malla.position,new THREE.Vector3(1,0,0));
 }
 
 function loop(){
+  var dir; 
+  var intersects=raycaster.intersectObjects(escena.children);
+  if (intersects.length>0)dir=dir+1;
+  
+  
   requestAnimationFrame(loop);
-  malla.rotation.y+=0.01;
+  //malla.rotation.y+=0.01;
   //camara.rotation.y = 20 * Math.PI / 180;
   //camara.rotation.z = 10 * Math.PI / 180;
+  if (dir=1)malla.position.x+=step;
+  raycaster.set(malla.position,new THREE.Vector3(0,0,1));
+  else if(dir=2)malla.position.z+=step;
+  raycaster.set(malla.position,new THREE.Vector3(-1,0,0));
+  else if(dir=3)malla.position.x-=step;
+  raycaster.set(malla.position,new THREE.Vector3(0,0,-1));
+  else if(dir=4)malla.position.z-=step;
+  dir=1;
+  raycaster.set(malla.position,new THREE.Vector3(1,0,0));
+  
   renderer.render(escena,camara);
 }
   
-var escena, camara, renderer, malla;
+var escena, camara, renderer, malla,obstaculo;
+var raycaster;
 setup();
 loop();
