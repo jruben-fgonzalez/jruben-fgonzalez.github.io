@@ -106,38 +106,39 @@ document.body.appendChild(renderer.domElement);
 step=0.8;
 
 
-raycaster=new THREE.Raycaster(malla.position,new THREE.Vector3(0,-1,0));
+raycaster=new THREE.Raycaster(malla.position,new THREE.Vector3(1,0,0));
 }
 
 function loop(){
   
   var intersects=raycaster.intersectObjects(escena.children);
-  if (intersects.length>0)dir=dir+1;
+  if (intersects.length>0)step=-step;
   
-  
-  requestAnimationFrame(loop);
   //malla.rotation.y+=0.01;
   //camara.rotation.y = 20 * Math.PI / 180;
   //camara.rotation.z = 10 * Math.PI / 180;
-  if (dir=1){
-    malla.position.x+=step;
-    raycaster.set(malla.position,new THREE.Vector3(0,0,1));
-  }
-  else if(dir=2){
-    malla.position.z+=step;
-    raycaster.set(malla.position,new THREE.Vector3(-1,0,0));
-  }
-  else if(dir=3){
-    malla.position.x-=step;
-    raycaster.set(malla.position,new THREE.Vector3(0,0,-1));
-  }
-  else {
-    malla.position.z-=step;
-    dir=1;
-    raycaster.set(malla.position,new THREE.Vector3(1,0,0));
-  }
-
+  
+  
+//  if (dir=1){
+    //malla.position.x+=step;
+    //raycaster.set(malla.position,new THREE.Vector3(0,0,1));
+  //}
+  //else if(dir=2){
+//    malla.position.z+=step;
+    //raycaster.set(malla.position,new THREE.Vector3(-1,0,0));
+  //}
+  //else if(dir=3){
+//    malla.position.x-=step;
+    //raycaster.set(malla.position,new THREE.Vector3(0,0,-1));
+  //}
+  //else {
+//    malla.position.z-=step;
+    //dir=1;
+    //raycaster.set(malla.position,new THREE.Vector3(1,0,0));
+  //}
+raycaster.set(malla.position,new THREE.Vector3(-1,0,0))
   renderer.render(escena,camara);
+  requestAnimationFrame(loop);
 }
   
 var escena, camara, renderer, malla,obstaculo;
