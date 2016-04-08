@@ -9,10 +9,10 @@ var material2 = new THREE.MeshLambertMaterial({map: ladrillo });
 var textura = THREE.ImageUtils.loadTexture('http://akata93.github.io/r2d2.jpg');
 var material = new THREE.MeshPhongMaterial({map: textura });
 
-var Pared1= new THREE.Mesh(pared, material2);
-var Pared2= new THREE.Mesh(pared, material2);
+Pared1= new THREE.Mesh(pared, material2);
+Pared2= new THREE.Mesh(pared, material2);
 Pared3= new THREE.Mesh(pared_1, material2);
-var Pared4= new THREE.Mesh(pared_1, material2);
+Pared4= new THREE.Mesh(pared_1, material2);
 
 var figurabasepie=new THREE.Shape();
 figurabasepie.moveTo(8,-35);
@@ -111,35 +111,49 @@ raycaster=new THREE.Raycaster(malla.position,new THREE.Vector3(1,0,0));
 
 function loop(){
   
-  var intersects=raycaster.intersectObject(Pared3);
-  if ((intersects.length>0) && (intersects[0].distance<=0.5)){
-    step=-step;
-  raycaster.set(malla.position,new THREE.Vector3(-1,0,0))
+  var obspared3=raycaster.intersectObject(Pared3);
+  var obspared2=raycaster.intersectObject(Pared2);
+  var obspared1=raycaster.intersectObject(Pared1);
+  var obspared4=raycaster.intersectObject(Pared4);
+  
+  if ((obspared3.length>0) && (obspared3[0].distance<=0.5)){
+    dir=2;
   }
   
-  malla.position.x+=step;
+  if ((obspared1.length>0) && (obspared1[0].distance<=0.5)){
+    dir=3;
+  }
+  
+  if ((obspared4.length>0) && (obspared4[0].distance<=0.5)){
+    dir=4;
+  }
+  
+  if ((obspared2.length>0) && (obspared2[0].distance<=0.5)){
+    dir=1;
+  }
+  
   //camara.rotation.y = 20 * Math.PI / 180;
   //camara.rotation.z = 10 * Math.PI / 180;
   
   
-//  if (dir=1){
-    //malla.position.x+=step;
-    //raycaster.set(malla.position,new THREE.Vector3(0,0,1));
-  //}
-  //else if(dir=2){
-//    malla.position.z+=step;
-    //raycaster.set(malla.position,new THREE.Vector3(-1,0,0));
-  //}
-  //else if(dir=3){
-//    malla.position.x-=step;
-    //raycaster.set(malla.position,new THREE.Vector3(0,0,-1));
-  //}
-  //else {
-//    malla.position.z-=step;
-    //dir=1;
-    //raycaster.set(malla.position,new THREE.Vector3(1,0,0));
-  //}
-
+  if (dir=1){
+    malla.position.x+=step;
+    raycaster.set(malla.position,new THREE.Vector3(0,0,1));
+  }
+  else if(dir=2){
+    malla.position.z+=step;
+    raycaster.set(malla.position,new THREE.Vector3(-1,0,0));
+  }
+  else if(dir=3){
+    malla.position.x-=step;
+    raycaster.set(malla.position,new THREE.Vector3(0,0,-1));
+  }
+  else {
+    malla.position.z-=step;
+    raycaster.set(malla.position,new THREE.Vector3(1,0,0));
+  }
+  
+  malla.position.x+=step;
   renderer.render(escena,camara);
   requestAnimationFrame(loop);
 }
@@ -147,7 +161,7 @@ function loop(){
 var escena, camara, renderer, malla,obstaculo;
 var raycaster;
 var dir; 
-var Pared3;
+var Pared1,Pared2,Pared3,Pared4;
 dir=1;
 setup();
 loop();
