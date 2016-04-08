@@ -143,5 +143,6 @@ function loop(){
 var escena, camara, renderer, malla,obstaculo;
 var raycaster;
 var dir; 
+dir=1;
 setup();
 loop();
