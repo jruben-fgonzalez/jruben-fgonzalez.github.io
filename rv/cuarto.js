@@ -112,9 +112,12 @@ raycaster=new THREE.Raycaster(malla.position,new THREE.Vector3(1,0,0));
 function loop(){
   
   var intersects=raycaster.intersectObjects(escena.children);
-  if (intersects.length>0)step=-step;
+  if (intersects.length>0){
+    step=-step;
+  raycaster.set(malla.position,new THREE.Vector3(-1,0,0))
+  }
   
-  //malla.rotation.y+=0.01;
+  malla.position.x+=step;
   //camara.rotation.y = 20 * Math.PI / 180;
   //camara.rotation.z = 10 * Math.PI / 180;
   
@@ -136,7 +139,7 @@ function loop(){
     //dir=1;
     //raycaster.set(malla.position,new THREE.Vector3(1,0,0));
   //}
-raycaster.set(malla.position,new THREE.Vector3(-1,0,0))
+
   renderer.render(escena,camara);
   requestAnimationFrame(loop);
 }
