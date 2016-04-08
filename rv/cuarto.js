@@ -11,7 +11,7 @@ var material = new THREE.MeshPhongMaterial({map: textura });
 
 var Pared1= new THREE.Mesh(pared, material2);
 var Pared2= new THREE.Mesh(pared, material2);
-var Pared3= new THREE.Mesh(pared_1, material2);
+Pared3= new THREE.Mesh(pared_1, material2);
 var Pared4= new THREE.Mesh(pared_1, material2);
 
 var figurabasepie=new THREE.Shape();
@@ -147,6 +147,7 @@ function loop(){
 var escena, camara, renderer, malla,obstaculo;
 var raycaster;
 var dir; 
+var Pared3;
 dir=1;
 setup();
 loop();
