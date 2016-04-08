@@ -111,7 +111,7 @@ raycaster=new THREE.Raycaster(malla.position,new THREE.Vector3(1,0,0));
 
 function loop(){
   
-  var intersects=raycaster.intersectObject(pared3);
+  var intersects=raycaster.intersectObject(Pared3);
   if (intersects.length>0){
     step=-step;
   raycaster.set(malla.position,new THREE.Vector3(-1,0,0))
