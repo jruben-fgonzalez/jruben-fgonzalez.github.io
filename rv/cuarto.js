@@ -119,23 +119,23 @@ function loop(){
   //malla.rotation.y+=0.01;
   //camara.rotation.y = 20 * Math.PI / 180;
   //camara.rotation.z = 10 * Math.PI / 180;
-  if (dir=1)
+  if (dir=1){
     malla.position.x+=step;
     raycaster.set(malla.position,new THREE.Vector3(0,0,1));
-  
-  else if(dir=2)
+  }
+  else if(dir=2){
     malla.position.z+=step;
     raycaster.set(malla.position,new THREE.Vector3(-1,0,0));
-  
-  else if(dir=3)
+  }
+  else if(dir=3){
     malla.position.x-=step;
     raycaster.set(malla.position,new THREE.Vector3(0,0,-1));
-  
-  else (dir=4)
+  }
+  else (dir=4){
     malla.position.z-=step;
     dir=1;
     raycaster.set(malla.position,new THREE.Vector3(1,0,0));
-  
+  }
 
   renderer.render(escena,camara);
 }
