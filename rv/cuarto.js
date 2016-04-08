@@ -131,7 +131,7 @@ function loop(){
     malla.position.x-=step;
     raycaster.set(malla.position,new THREE.Vector3(0,0,-1));
   }
-  else (dir=4){
+  else {
     malla.position.z-=step;
     dir=1;
     raycaster.set(malla.position,new THREE.Vector3(1,0,0));
