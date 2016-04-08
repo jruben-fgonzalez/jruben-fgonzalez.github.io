@@ -103,7 +103,7 @@ renderer=new THREE.WebGLRenderer();
 renderer.setSize(window.innerHeight*0.95,window.innerHeight*0.95);
 document.body.appendChild(renderer.domElement);
 
-step2=0.2;
+step=0.2;
 
 
 raycaster=new THREE.Raycaster(malla.position,new THREE.Vector3(1,0,0));
@@ -131,7 +131,7 @@ function loop(){
     malla.position.x-=step;
     raycaster.set(malla.position,new THREE.Vector3(0,0,-1));
   
-  else if(dir=4)
+  else (dir=4)
     malla.position.z-=step;
     dir=1;
     raycaster.set(malla.position,new THREE.Vector3(1,0,0));
