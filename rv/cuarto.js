@@ -110,7 +110,7 @@ raycaster=new THREE.Raycaster(malla.position,new THREE.Vector3(1,0,0));
 }
 
 function loop(){
-  var dir; 
+  
   var intersects=raycaster.intersectObjects(escena.children);
   if (intersects.length>0)dir=dir+1;
   
@@ -142,5 +142,6 @@ function loop(){
   
 var escena, camara, renderer, malla,obstaculo;
 var raycaster;
+var dir; 
 setup();
 loop();
