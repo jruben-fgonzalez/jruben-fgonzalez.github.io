@@ -116,7 +116,16 @@ function loop(){
     raycaster.set(malla.position,new THREE.Vector3(-1,0,0));
   }
   
-  if ((obspared4.length>0) && (obspared4[0].distance<=0.5)){
+  if ((obspared1.length>0) && (obspared1[0].distance<=0.5)){
+    dir=3;
+    raycaster.set(malla.position,new THREE.Vector3(-1,0,0));
+  }
+ if ((obspared4.length>0) && (obspared4[0].distance<=0.5)){
+    dir=4;
+    raycaster.set(malla.position,new THREE.Vector3(0,0,-1));
+  }
+  
+  if ((obspared2.length>0) && (obspared2[0].distance<=0.5)){
     dir=1;
     raycaster.set(malla.position,new THREE.Vector3(1,0,0));
   }
@@ -124,13 +133,18 @@ function loop(){
   
   if (dir==1){
     
-    step=0.8;
+     malla.position.x+=step;
   }
   else if(dir==2){
-    step=-0.8;
+     malla.position.z+=step;
+  }
+  else if(dir==3){
+    malla.position.x-=step;
+  }
+  else (dir==4){
+    malla.position.z-=step;
   }
  
-  malla.position.x+=step;
   renderer.render(escena,camara);
   requestAnimationFrame(loop);
 }
