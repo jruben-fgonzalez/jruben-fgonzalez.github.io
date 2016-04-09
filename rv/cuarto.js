@@ -141,7 +141,7 @@ function loop(){
   else if(dir==3){
     malla.position.x-=step;
   }
-  else (dir==4){
+  else if(dir==4){
     malla.position.z-=step;
   }
  
