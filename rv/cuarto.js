@@ -113,7 +113,7 @@ function loop(){
   
   if ((obspared3.length>0) && (obspared3[0].distance<=0.5)){
     dir=2;
-    raycaster.set(malla.position,new THREE.Vector3(-1,0,0));
+    raycaster.set(malla.position,new THREE.Vector3(0,0,1));
   }
   
   if ((obspared1.length>0) && (obspared1[0].distance<=0.5)){
@@ -136,13 +136,13 @@ function loop(){
      malla.position.x+=step;
   }
   else if(dir==2){
-     malla.position.z-=step;
+     malla.position.z+=step;
   }
   else if(dir==3){
     malla.position.x-=step;
   }
   else if(dir==4){
-    malla.position.z+=step;
+    malla.position.z-=step;
   }
  
   renderer.render(escena,camara);
