@@ -123,14 +123,14 @@ function loop(){
 
   
   if (dir=1){
-    malla.position.x+=step;
     
+    step=0.8;
   }
   else if(dir=2){
-    malla.position.x-=step;
+    step=-0.8;
   }
  
-  
+  malla.position.x+=step;
   renderer.render(escena,camara);
   requestAnimationFrame(loop);
 }
