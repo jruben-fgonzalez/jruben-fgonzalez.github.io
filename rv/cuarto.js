@@ -122,11 +122,11 @@ function loop(){
   }
 
   
-  if (dir=1){
+  if (dir==1){
     
     step=0.8;
   }
-  else if(dir=2){
+  else if(dir==2){
     step=-0.8;
   }
  
