@@ -136,13 +136,13 @@ function loop(){
      malla.position.x+=step;
   }
   else if(dir==2){
-     malla.position.z+=step;
+     malla.position.z-=step;
   }
   else if(dir==3){
     malla.position.x-=step;
   }
   else if(dir==4){
-    malla.position.z-=step;
+    malla.position.z+=step;
   }
  
   renderer.render(escena,camara);
