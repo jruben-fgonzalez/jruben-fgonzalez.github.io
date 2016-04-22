@@ -5,9 +5,9 @@ THREE.ImageUtils.crossOrigin='';
 var pared=new THREE.BoxGeometry(500, 100, 10);
 var pared_1=new THREE.BoxGeometry(10, 100, 500);
 var ladrillo = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/brick_diffuse.jpg');
-var material2 = new THREE.MeshLambertMaterial({map: ladrillo });
+var material2 = new THREE.MeshPhongMaterial({map: ladrillo });
 var textura = THREE.ImageUtils.loadTexture('http://akata93.github.io/r2d2.jpg');
-var material = new THREE.MeshPhongMaterial({map: textura });
+var material = new THREE.MeshBasicMaterial({map: textura });
 
 Pared1= new THREE.Mesh(pared, material2);
 Pared2= new THREE.Mesh(pared, material2);
@@ -59,7 +59,8 @@ Pared2.position.z=-250;
 Pared3.position.x=250;
 Pared4.position.x=-250;
 
-var luzPuntual = new THREE.PointLight(0xffffff);
+/*
+  var luzPuntual = new THREE.PointLight(0xffffff);
   luzPuntual.position.x=500;
   luzPuntual.position.y=500;
   luzPuntual.position.z=500;
@@ -72,7 +73,7 @@ var luzPuntual = new THREE.PointLight(0xffffff);
   luzPuntual2.position.x=0;
   luzPuntual2.position.y=500;
   luzPuntual2.position.z=0;
-  
+*/
 raycaster1= new THREE.Raycaster(malla.position , new THREE.Vector3(1,0,0));
 
 escena=new THREE.Scene();
@@ -81,12 +82,19 @@ escena.add(Pared1);
 escena.add(Pared2);
 escena.add(Pared3);
 escena.add(Pared4);
-escena.add(luzPuntual);
-escena.add(luzPuntual1);
-escena.add(luzPuntual2);
+//escena.add(luzPuntual);
+//escena.add(luzPuntual1);
+//escena.add(luzPuntual2);
 
-//escena.add(Pared3);
-//escena.add(Pared4);
+spotLight = new THREE.SpotLight( 0xffffff );
+spotLight.position.set(malla.position,new THREE.Vector3(1,0,0));
+
+spotLight.castShadow = true;
+
+spotLight.shadow.mapSize.width = 1024;
+spotLight.shadow.mapSize.height = 1024;
+
+escena.add( spotLight );
 
 camara=new THREE.PerspectiveCamera();
 //camara.rotation.x = 90 * Math.PI / 180;
@@ -114,20 +122,24 @@ function loop(){
   if ((obspared3.length>0) && (obspared3[0].distance<=25)){
     dir=2;
     raycaster.set(malla.position,new THREE.Vector3(0,0,1));
+    spotLight.position.set(malla.position,new THREE.Vector3(0,0,1));
   }
   
   if ((obspared1.length>0) && (obspared1[0].distance<=17)){
     dir=3;
     raycaster.set(malla.position,new THREE.Vector3(-1,0,0));
+    spotLight.position.set(malla.position,new THREE.Vector3(-1,0,0));
   }
  if ((obspared4.length>0) && (obspared4[0].distance<=25)){
     dir=4;
     raycaster.set(malla.position,new THREE.Vector3(0,0,-1));
+    spotLight.position.set(malla.position,new THREE.Vector3(0,0,-1));
   }
   
   if ((obspared2.length>0) && (obspared2[0].distance<=17)){
     dir=1;
     raycaster.set(malla.position,new THREE.Vector3(1,0,0));
+    spotLight.position.set(malla.position,new THREE.Vector3(1,0,0));
   }
 
   
@@ -155,6 +167,7 @@ function loop(){
   
 var escena, camara, renderer, malla;
 var raycaster;
+var spotLight
 var dir; 
 var Pared1,Pared2,Pared3,Pared4;
 var obspared1,obspared2,obspared3,obspared4;
