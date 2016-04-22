@@ -134,19 +134,19 @@ function loop(){
   if (dir==1){
     
      malla.position.x+=step;
-     malla.rotation.y=90*(Math.PI/)180;
+     malla.rotation.y=90*(Math.PI)/180;
   }
   else if(dir==2){
      malla.position.z+=step;
-     malla.rotation.y=180*(Math.PI/)180;
+     malla.rotation.y=180*(Math.PI)/180;
   }
   else if(dir==3){
     malla.position.x-=step;
-    malla.rotation.y=-90*(Math.PI/)180;
+    malla.rotation.y=-90*(Math.PI)/180;
   }
   else if(dir==4){
     malla.position.z-=step;
-    malla.rotation.y=-180*(Math.PI/)180;
+    malla.rotation.y=-180*(Math.PI)/180;
   }
  
   renderer.render(escena,camara);
