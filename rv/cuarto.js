@@ -91,8 +91,8 @@ spotLight.position.set(malla.position,new THREE.Vector3(1,0,0));
 
 spotLight.castShadow = true;
 
-spotLight.shadow.mapSize.width = 1024;
-spotLight.shadow.mapSize.height = 1024;
+//spotLight.shadow.mapSize.width = 1024;
+//spotLight.shadow.mapSize.height = 1024;
 
 escena.add( spotLight );
 
