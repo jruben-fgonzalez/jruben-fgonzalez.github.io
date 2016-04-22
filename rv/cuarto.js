@@ -111,21 +111,21 @@ function loop(){
   obspared1=raycaster.intersectObject(Pared1);
   obspared4=raycaster.intersectObject(Pared4);
   
-  if ((obspared3.length>0) && (obspared3[0].distance<=15)){
+  if ((obspared3.length>0) && (obspared3[0].distance<=25)){
     dir=2;
     raycaster.set(malla.position,new THREE.Vector3(0,0,1));
   }
   
-  if ((obspared1.length>0) && (obspared1[0].distance<=12)){
+  if ((obspared1.length>0) && (obspared1[0].distance<=17)){
     dir=3;
     raycaster.set(malla.position,new THREE.Vector3(-1,0,0));
   }
- if ((obspared4.length>0) && (obspared4[0].distance<=15)){
+ if ((obspared4.length>0) && (obspared4[0].distance<=25)){
     dir=4;
     raycaster.set(malla.position,new THREE.Vector3(0,0,-1));
   }
   
-  if ((obspared2.length>0) && (obspared2[0].distance<=12)){
+  if ((obspared2.length>0) && (obspared2[0].distance<=17)){
     dir=1;
     raycaster.set(malla.position,new THREE.Vector3(1,0,0));
   }
