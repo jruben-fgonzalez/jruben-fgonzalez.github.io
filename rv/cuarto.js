@@ -86,7 +86,7 @@ escena.add(Pared4);
 //escena.add(luzPuntual1);
 //escena.add(luzPuntual2);
 
-spotLight = new THREE.SpotLight(0xffffff,4,100,0.5,0);
+spotLight = new THREE.SpotLight(0xffffff,4,100,0.5,0.5,0);
 spotLight.position.set(malla.position,new THREE.Vector3(1,0,0));
 
 spotLight.castShadow = true;
