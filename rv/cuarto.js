@@ -111,21 +111,21 @@ function loop(){
   obspared1=raycaster.intersectObject(Pared1);
   obspared4=raycaster.intersectObject(Pared4);
   
-  if ((obspared3.length>0) && (obspared3[0].distance<=1)){
+  if ((obspared3.length>0) && (obspared3[0].distance<=10)){
     dir=2;
     raycaster.set(malla.position,new THREE.Vector3(0,0,1));
   }
   
-  if ((obspared1.length>0) && (obspared1[0].distance<=0.8)){
+  if ((obspared1.length>0) && (obspared1[0].distance<=8)){
     dir=3;
     raycaster.set(malla.position,new THREE.Vector3(-1,0,0));
   }
- if ((obspared4.length>0) && (obspared4[0].distance<=1)){
+ if ((obspared4.length>0) && (obspared4[0].distance<=10)){
     dir=4;
     raycaster.set(malla.position,new THREE.Vector3(0,0,-1));
   }
   
-  if ((obspared2.length>0) && (obspared2[0].distance<=0.8)){
+  if ((obspared2.length>0) && (obspared2[0].distance<=8)){
     dir=1;
     raycaster.set(malla.position,new THREE.Vector3(1,0,0));
   }
@@ -134,15 +134,19 @@ function loop(){
   if (dir==1){
     
      malla.position.x+=step;
+     malla.rotation.y=90*(Math.PI/)180;
   }
   else if(dir==2){
      malla.position.z+=step;
+     malla.rotation.y=180*(Math.PI/)180;
   }
   else if(dir==3){
     malla.position.x-=step;
+    malla.rotation.y=-90*(Math.PI/)180;
   }
   else if(dir==4){
     malla.position.z-=step;
+    malla.rotation.y=-180*(Math.PI/)180;
   }
  
   renderer.render(escena,camara);
