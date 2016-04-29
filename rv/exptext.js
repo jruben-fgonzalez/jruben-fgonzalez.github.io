@@ -30,19 +30,9 @@ camara.position.y = 600 ;
 
 escena.add(cilindro)
 
-spotLight = new THREE.SpotLight( 0xffffff );
-spotLight.position.set(cilindro.position);
-
-spotLight.castShadow = true;
-
-spotLight.shadow.mapSize.width = 1024;
-spotLight.shadow.mapSize.height = 1024;
-
-spotLight.shadow.camera.near = 500;
-spotLight.shadow.camera.far = 4000;
-spotLight.shadow.camera.fov = 30;
-
-escena.add( spotLight );
+light = new THREE.PointLight( 0xff0000, 1, 100 );
+light.position.set( 0, 0, 0 );
+escena.add( light );
 
 renderer=new THREE.WebGLRenderer();
 renderer.setSize(window.innerHeight*0.95,window.innerHeight*0.95);
@@ -56,7 +46,7 @@ function loop(){
 }
   
 var escena, camara, renderer, malla;
-var spotLight
+var light
 var Pared1,Pared2,Pared3,Pared4;
 var cilindro;
 setup();
