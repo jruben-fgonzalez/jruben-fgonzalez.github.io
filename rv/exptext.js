@@ -21,6 +21,11 @@ escena.add(Pared2);
 escena.add(Pared3);
 escena.add(Pared4);
 
+Pared1.position.z=250;
+Pared2.position.z=-250;
+Pared3.position.x=250;
+Pared4.position.x=-250;
+
 var forma=new THREE.CylinderGeometry(25,25,50,20);
 cilindro=new THREE.Mesh(forma,material);
 
