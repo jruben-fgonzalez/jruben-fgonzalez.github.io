@@ -5,7 +5,7 @@ THREE.ImageUtils.crossOrigin='';
 var pared=new THREE.BoxGeometry(500, 100, 10);
 var pared_1=new THREE.BoxGeometry(10, 100, 500);
 var ladrillo = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/brick_diffuse.jpg');
-var dragon= THREE.ImageUtils.loadTexture('http://www.conmishijos.com/assets/posts/6000/6013-dibujos-dinosaurio.jpg');
+var dragon= THREE.ImageUtils.loadTexture('http://thumbs.dreamstime.com/z/drag%C3%B3n-blanco-y-negro-39474403.jpg');
 var material2 = new THREE.MeshPhongMaterial({map: ladrillo });
 var material = new THREE.MeshBasicMaterial({map: dragon });
 
