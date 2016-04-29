@@ -26,12 +26,12 @@ Pared2.position.z=-250;
 Pared3.position.x=250;
 Pared4.position.x=-250;
 
-var forma=new THREE.CylinderGeometry(25,25,50,20);
+var forma=new THREE.CylinderGeometry(35,35,60,20);
 cilindro=new THREE.Mesh(forma,material);
 
 camara=new THREE.PerspectiveCamera();
 camara.position.z=1200;
-camara.position.y = 500 ;  
+camara.position.y = 400 ;  
 
 escena.add(cilindro)
 
