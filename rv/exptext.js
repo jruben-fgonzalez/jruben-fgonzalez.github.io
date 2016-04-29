@@ -47,7 +47,7 @@ scene.add( spotLight );
 renderer=new THREE.WebGLRenderer();
 renderer.setSize(window.innerHeight*0.95,window.innerHeight*0.95);
 document.body.appendChild(renderer.domElement);
-
+}
 function loop(){
   
   renderer.render(escena,camara);
