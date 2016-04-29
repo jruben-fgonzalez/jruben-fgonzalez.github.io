@@ -6,7 +6,7 @@ var pared=new THREE.BoxGeometry(500, 100, 10);
 var pared_1=new THREE.BoxGeometry(10, 100, 500);
 var ladrillo = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/brick_diffuse.jpg');
 var dragon= THREE.ImageUtils.loadTexture('http://thumbs.dreamstime.com/z/drag%C3%B3n-blanco-y-negro-39474403.jpg');
-var material2 = new THREE.MeshNormalMaterial({map: ladrillo });
+var material2 = new THREE.MeshPhongMaterial({map: ladrillo });
 var material = new THREE.MeshBasicMaterial({map: dragon });
 
 Pared1= new THREE.Mesh(pared, material2);
@@ -30,8 +30,8 @@ var forma=new THREE.CylinderGeometry(25,25,50,20);
 cilindro=new THREE.Mesh(forma,material);
 
 camara=new THREE.PerspectiveCamera();
-camara.position.z=1500;
-camara.position.y = 600 ;  
+camara.position.z=1200;
+camara.position.y = 500 ;  
 
 escena.add(cilindro)
 
