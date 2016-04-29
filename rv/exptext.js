@@ -22,7 +22,7 @@ escena.add(Pared3);
 escena.add(Pared4);
 
 var forma=new THREE.CylinderGeometry(25,25,50,20);
-var cilindro=new THREE.Mesh(forma,material);
+cilindro=new THREE.Mesh(forma,material);
 
 camara=new THREE.PerspectiveCamera();
 camara.position.z=1500;
@@ -58,5 +58,6 @@ function loop(){
 var escena, camara, renderer, malla;
 var spotLight
 var Pared1,Pared2,Pared3,Pared4;
+var cilindro;
 setup();
 loop();
