@@ -35,7 +35,7 @@ camara.position.y = 500 ;
 
 escena.add(cilindro)
 
-light = new THREE.PointLight( 0xff0000, 1, 100 );
+light = new THREE.PointLight( 0xff0000, 1, 500 );
 light.position.set( 0, 0, 0 );
 escena.add( light );
 
