@@ -5,7 +5,7 @@ THREE.ImageUtils.crossOrigin='';
 var pared=new THREE.BoxGeometry(500, 100, 10);
 var pared_1=new THREE.BoxGeometry(10, 100, 500);
 var ladrillo = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/brick_diffuse.jpg');
-var material2 = new THREE.MeshPhongMaterial({map: ladrillo });
+var material2 = new THREE.MeshNormalMaterial({map: ladrillo });
 var textura = THREE.ImageUtils.loadTexture('http://akata93.github.io/r2d2.jpg');
 var material = new THREE.MeshBasicMaterial({map: textura });
 
