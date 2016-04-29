@@ -47,7 +47,7 @@ function loop(){
   
   renderer.render(escena,camara);
   requestAnimationFrame(loop);
-  cilindro.rotation.y +=0.1;
+  cilindro.rotation.y +=0.01;
 }
   
 var escena, camara, renderer, malla;
