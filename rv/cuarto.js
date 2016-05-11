@@ -17,16 +17,17 @@ Pared2= new THREE.Mesh(pared, material2);
 Pared3= new THREE.Mesh(pared_1, material2);
 Pared4= new THREE.Mesh(pared_1, material2);
 
-var offset=-250;
+var offsetx=-250;
+var offsetz=250;
 for (var i = 0; i < 9; i++) {
   for (var j== 0; j < 9; j++){
    
-    offsetx=offsetx-50;
+    offsetx=offsetx+50;
     basecuadro[i]= new THREE.Mesh(base,materialb);
     basecuadro[i].position.x=offsetx; 
     
   }
-  offsetz=offsetz+50;
+  offsetz=offsetz-50;
   basecuadro[i].position.z=offsetz; 
 }
 basecuadro= new THREE.Mesh(base,materialb);
