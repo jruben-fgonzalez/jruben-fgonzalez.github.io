@@ -30,7 +30,7 @@ for (var i = 0; i < 9; i++) {
     h=h+1;
   }
   offsetz=offsetz-50;
-  
+  offsetx=-250;
 }
 basecuadro= new THREE.Mesh(base,materialb);
 
@@ -74,10 +74,10 @@ THREE.GeometryUtils.merge(forma,mallabrazo2);
 
 malla=new THREE.Mesh(forma, material);
 
-Pared1.position.z=250;
-Pared2.position.z=-250;
 Pared3.position.x=250;
 Pared4.position.x=-250;
+Pared1.position.z=250;
+Pared2.position.z=-250;
 
 /*
   var luzPuntual = new THREE.PointLight(0xffffff);
