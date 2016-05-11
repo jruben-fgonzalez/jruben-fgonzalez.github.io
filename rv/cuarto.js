@@ -17,22 +17,6 @@ Pared2= new THREE.Mesh(pared, material2);
 Pared3= new THREE.Mesh(pared_1, material2);
 Pared4= new THREE.Mesh(pared_1, material2);
 
-var offsetx=-250;
-var offsetz=250;
-var h=0;
-for (var i = 0; i < 9; i++) {
-  for (var j= 0; j < 9; j++){
-   
-    basecuadro[h]= new THREE.Mesh(base,materialb);
-    basecuadro[h].position.x=offsetx;
-    basecuadro[h].position.z=offsetz; 
-    offsetx=offsetx+50;
-    h=h+1;
-  }
-  offsetz=offsetz-50;
-  offsetx=-250;
-}
-basecuadro= new THREE.Mesh(base,materialb);
 
 var figurabasepie=new THREE.Shape();
 figurabasepie.moveTo(8,-35);
@@ -102,6 +86,23 @@ escena.add(Pared1);
 escena.add(Pared2);
 escena.add(Pared3);
 escena.add(Pared4);
+
+var offsetx=-250;
+var offsetz=250;
+var h=0;
+for (var i = 0; i < 9; i++) {
+  for (var j= 0; j < 9; j++){
+   
+    basecuadro[h]= new THREE.Mesh(base,materialb);
+    basecuadro[h].position.x=offsetx;
+    basecuadro[h].position.z=offsetz; 
+    offsetx=offsetx+50;
+    escena.add(basecuadro[h]);
+    h=h+1;
+  }
+  offsetz=offsetz-50;
+  offsetx=-250;
+}
 //escena.add(luzPuntual);
 //escena.add(luzPuntual1);
 //escena.add(luzPuntual2);
