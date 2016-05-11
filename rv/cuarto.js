@@ -10,7 +10,7 @@ var ladrillo = THREE.ImageUtils.loadTexture('http://threejs.org/examples/texture
 var material2 = new THREE.MeshPhongMaterial({map: ladrillo });
 var textura = THREE.ImageUtils.loadTexture('http://akata93.github.io/r2d2.jpg');
 var material = new THREE.MeshBasicMaterial({map: textura });
-var materialb= new THREE.MeshNormalMaterial({map: marmol })
+var materialb= new THREE.MeshBasicMaterial({map: marmol })
 
 Pared1= new THREE.Mesh(pared, material2);
 Pared2= new THREE.Mesh(pared, material2);
