@@ -4,15 +4,32 @@ THREE.ImageUtils.crossOrigin='';
 
 var pared=new THREE.BoxGeometry(500, 100, 10);
 var pared_1=new THREE.BoxGeometry(10, 100, 500);
+var base=new THREE.BoxGeometry(50,10,50);
+var marmol=THREE.ImageUtils.loadTexture('http://www.cubiertasparacocina.com/materiales//PRINCIPAL.jpg');
 var ladrillo = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/brick_diffuse.jpg');
 var material2 = new THREE.MeshPhongMaterial({map: ladrillo });
 var textura = THREE.ImageUtils.loadTexture('http://akata93.github.io/r2d2.jpg');
 var material = new THREE.MeshBasicMaterial({map: textura });
+var materialb= new THREE.meshBasicMaterial({map: marmol })
 
 Pared1= new THREE.Mesh(pared, material2);
 Pared2= new THREE.Mesh(pared, material2);
 Pared3= new THREE.Mesh(pared_1, material2);
 Pared4= new THREE.Mesh(pared_1, material2);
+
+var offset=-250;
+for (var i = 0; i < 9; i++) {
+  for (var j== 0; j < 9; j++){
+   
+    offsetx=offsetx-50;
+    basecuadro[i]= new THREE.Mesh(base,materialb);
+    basecuadro[i].position.x=offsetx; 
+    
+  }
+  offsetz=offsetz+50;
+  basecuadro[i].position.z=offsetz; 
+}
+basecuadro= new THREE.Mesh(base,materialb);
 
 var figurabasepie=new THREE.Shape();
 figurabasepie.moveTo(8,-35);
@@ -101,10 +118,11 @@ spotLight.shadow.camera.fov = 30;
 escena.add( spotLight );
 
 camara=new THREE.PerspectiveCamera();
-//camara.rotation.x = 90 * Math.PI / 180;
-camara.position.z=1500;
-camara.position.y = 600 ;  
-//camara.position.y=;
+//camara.position.z=1500;
+//camara.position.y = 600 ;
+camara.rotation.x=-1.57;
+camara.position.y=600;  
+
 
 renderer=new THREE.WebGLRenderer();
 renderer.setSize(window.innerHeight*0.95,window.innerHeight*0.95);
@@ -175,6 +193,7 @@ var spotLight
 var dir; 
 var Pared1,Pared2,Pared3,Pared4;
 var obspared1,obspared2,obspared3,obspared4;
+var basecuadro;
 dir=1;
 setup();
 loop();
