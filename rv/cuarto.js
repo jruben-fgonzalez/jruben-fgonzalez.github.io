@@ -22,13 +22,13 @@ var offsetz=250;
 for (var i = 0; i < 9; i++) {
   for (var j= 0; j < 9; j++){
    
+    basecuadro[i][j]= new THREE.Mesh(base,materialb);
+    basecuadro[i][j].position.x=offsetx;
+    basecuadro[i][j].position.z=offsetz; 
     offsetx=offsetx+50;
-    basecuadro[i]= new THREE.Mesh(base,materialb);
-    basecuadro[i].position.x=offsetx; 
     
   }
   offsetz=offsetz-50;
-  basecuadro[i].position.z=offsetz; 
 }
 basecuadro= new THREE.Mesh(base,materialb);
 
