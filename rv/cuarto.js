@@ -19,16 +19,18 @@ Pared4= new THREE.Mesh(pared_1, material2);
 
 var offsetx=-250;
 var offsetz=250;
+var h=0;
 for (var i = 0; i < 9; i++) {
   for (var j= 0; j < 9; j++){
    
-    basecuadro[i][j]= new THREE.Mesh(base,materialb);
-    basecuadro[i][j].position.x=offsetx;
-    basecuadro[i][j].position.z=offsetz; 
+    basecuadro[h]= new THREE.Mesh(base,materialb);
+    basecuadro[h].position.x=offsetx;
+    basecuadro[h].position.z=offsetz; 
     offsetx=offsetx+50;
-    
+    h=h+1;
   }
   offsetz=offsetz-50;
+  
 }
 basecuadro= new THREE.Mesh(base,materialb);
 
