@@ -10,7 +10,7 @@ var ladrillo = THREE.ImageUtils.loadTexture('http://threejs.org/examples/texture
 var material2 = new THREE.MeshPhongMaterial({map: ladrillo });
 var textura = THREE.ImageUtils.loadTexture('http://akata93.github.io/r2d2.jpg');
 var material = new THREE.MeshBasicMaterial({map: textura });
-var materialb= new THREE.MeshBasicMaterial({map: marmol })
+var materialb= new THREE.MeshNormalMaterial({map: marmol })
 
 Pared1= new THREE.Mesh(pared, material2);
 Pared2= new THREE.Mesh(pared, material2);
@@ -90,8 +90,8 @@ escena.add(Pared4);
 var offsetx=-250;
 var offsetz=-250;
 var h=0;
-for (var i = 0; i < 9; i++) {
-  for (var j= 0; j < 9; j++){
+for (var i = 0; i < 10; i++) {
+  for (var j= 0; j < 10; j++){
    
     basecuadro[h]= new THREE.Mesh(base,materialb);
     basecuadro[h].position.x=offsetx;
