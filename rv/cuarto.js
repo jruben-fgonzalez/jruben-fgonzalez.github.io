@@ -95,7 +95,8 @@ for (var i = 0; i < 10; i++) {
    
     basecuadro[h]= new THREE.Mesh(base,materialb);
     basecuadro[h].position.x=offsetx;
-    basecuadro[h].position.z=offsetz; 
+    basecuadro[h].position.z=offsetz;
+    basecuadro[h].position.y=-50;
     offsetx=offsetx+50;
     escena.add(basecuadro[h]);
     h=h+1;
