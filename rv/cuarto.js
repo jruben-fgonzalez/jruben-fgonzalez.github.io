@@ -88,7 +88,7 @@ escena.add(Pared3);
 escena.add(Pared4);
 
 var offsetx=-250;
-var offsetz=250;
+var offsetz=-250;
 var h=0;
 for (var i = 0; i < 9; i++) {
   for (var j= 0; j < 9; j++){
@@ -100,7 +100,7 @@ for (var i = 0; i < 9; i++) {
     escena.add(basecuadro[h]);
     h=h+1;
   }
-  offsetz=offsetz-50;
+  offsetz=offsetz+50;
   offsetx=-250;
 }
 //escena.add(luzPuntual);
