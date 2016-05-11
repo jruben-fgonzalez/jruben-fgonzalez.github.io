@@ -20,7 +20,7 @@ Pared4= new THREE.Mesh(pared_1, material2);
 var offsetx=-250;
 var offsetz=250;
 for (var i = 0; i < 9; i++) {
-  for (var j== 0; j < 9; j++){
+  for (var j= 0; j < 9; j++){
    
     offsetx=offsetx+50;
     basecuadro[i]= new THREE.Mesh(base,materialb);
