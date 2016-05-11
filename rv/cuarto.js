@@ -4,7 +4,7 @@ THREE.ImageUtils.crossOrigin='';
 
 var pared=new THREE.BoxGeometry(500, 100, 10);
 var pared_1=new THREE.BoxGeometry(10, 100, 500);
-var base=new THREE.BoxGeometry(50,10,50);
+var base=new THREE.BoxGeometry(50,50,50);
 var marmol=THREE.ImageUtils.loadTexture('http://www.cubiertasparacocina.com/materiales//PRINCIPAL.jpg');
 var ladrillo = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/brick_diffuse.jpg');
 var material2 = new THREE.MeshPhongMaterial({map: ladrillo });
