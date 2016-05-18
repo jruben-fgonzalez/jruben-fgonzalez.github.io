@@ -94,12 +94,11 @@ var offsetz=-250;
 var h=0;
 for (var i = 0; i < 10; i++) {
   for (var j= 0; j < 10; j++){
-    if (j==1 || j==3 || j==5 || j==7 || j==9){
-      if (i==1 || i==3 || i==5 || i==7 || i==9)
-      basecuadro[h]= new THREE.Mesh(base,materialb);
-      else
-      basecuadro[h]= new THREE.Mesh(base,materialmadera);  
-    }
+  
+    if (i==1 || i==3 || i==5 || i==7 || i==9) && (j==1 || j==3 || j==5 || j==7 || j==9)
+    basecuadro[h]= new THREE.Mesh(base,materialb);
+    else
+    basecuadro[h]= new THREE.Mesh(base,materialmadera);  
    
     
     basecuadro[h].position.x=offsetx;
