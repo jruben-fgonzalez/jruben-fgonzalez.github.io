@@ -6,10 +6,12 @@ var pared=new THREE.BoxGeometry(500, 100, 10);
 var pared_1=new THREE.BoxGeometry(10, 100, 500);
 var base=new THREE.BoxGeometry(50,50,50);
 var marmol=THREE.ImageUtils.loadTexture('marmol.jpg');
+var madera=THREE.ImageUtils.loadTexture('madera.jpg');
 var ladrillo = THREE.ImageUtils.loadTexture('http://threejs.org/examples/textures/brick_diffuse.jpg');
 var material2 = new THREE.MeshPhongMaterial({map: ladrillo });
 var textura = THREE.ImageUtils.loadTexture('http://akata93.github.io/r2d2.jpg');
 var material = new THREE.MeshBasicMaterial({map: textura });
+var materialmadera=new THREE.MeshBasicMaterial({map: madera })
 var materialb= new THREE.MeshBasicMaterial({map: marmol })
 
 Pared1= new THREE.Mesh(pared, material2);
@@ -92,8 +94,11 @@ var offsetz=-250;
 var h=0;
 for (var i = 0; i < 10; i++) {
   for (var j= 0; j < 10; j++){
-   
+   if (i==1 || i==3 || i==5 || i==7 || i==9)
     basecuadro[h]= new THREE.Mesh(base,materialb);
+    else
+    basecuadro[h]= new THREE.Mesh(base,materialmadera);
+    
     basecuadro[h].position.x=offsetx;
     basecuadro[h].position.z=offsetz;
     basecuadro[h].position.y=-50;
